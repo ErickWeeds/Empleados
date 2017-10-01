@@ -21,7 +21,6 @@ class CreateDomiciliosTable extends Migration
             $table->string('d_colonia');
             $table->string('d_cp');
             $table->string('d_estado');
-            $table->string('d_pais');
             $table->integer('empleado_id')->unsigned();
             $table->timestamps();
 

@@ -11,6 +11,5 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::resource('/empleado','EmpleadoController');
+Route::get('/','HomeController@index')->name('home');
