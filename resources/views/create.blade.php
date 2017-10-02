@@ -15,7 +15,15 @@
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
                 <div class="panel-heading">Registrar Nuevo Empleado</div>
-
+                @if ($errors->any())
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+                @endif
                 <form action="{{route('empleado.store')}}" method="POST">
                     <div class="panel-body form-holder">
                         {{csrf_field()}}
@@ -26,11 +34,11 @@
                         </div>
                         <div class="form-group">
                             <label>Email:</label>
-                            <input type="email" class="form-control" name="txtNombre" placeholder="Ingresa el e-mail del empleado" required="required">
+                            <input type="email" class="form-control" name="txtEmail" placeholder="Ingresa el e-mail del empleado" required="required">
                         </div>
                         <div class="form-group">
                             <label>Fecha de Nacimiento:</label>
-                            <input type="date" class="form-control" name="txtNombre" required="required">
+                            <input type="date" class="form-control" name="txtFnacimiento" required="required">
                         </div>
                         <div class="form-group domicilio">
                             <h4>Domicilio 1</h4>
@@ -59,7 +67,7 @@
                                 </div>
                                 <div class="col-md-4">
                                     <label>Estado:</label>
-                                    <input type="text" class="form-control" name="txtDinterior" placeholder="Estado" required="required">
+                                    <input type="text" class="form-control" name="txtDestado" placeholder="Estado" required="required">
                                 </div>
                             </div>
                         </div>
